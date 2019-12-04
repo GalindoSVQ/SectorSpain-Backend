@@ -25,6 +25,8 @@ from django.conf import settings
 from django.conf.urls import handler404, handler500
 from django.conf.urls.static import static
 
+
+
 schema_view = get_schema_view(
     openapi.Info(
         title="Django API",
@@ -60,4 +62,5 @@ swagger_urlpatterns = [
 urlpatterns = ([]
                + required_urlpatterns
                + swagger_urlpatterns
-               + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))
+               + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+               + static(settings.STATIC_URL, document_root=settings.STATIC_URL))
