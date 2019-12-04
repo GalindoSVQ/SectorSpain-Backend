@@ -83,7 +83,7 @@ Vagrant.configure("2") do |config|
   # SHELL
 
   config.push.define "heroku" do |push|
-  push.app = "my_application"
+  push.app = "backend"
   end
 
 
