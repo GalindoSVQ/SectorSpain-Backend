@@ -62,5 +62,4 @@ swagger_urlpatterns = [
 urlpatterns = ([]
                + required_urlpatterns
                + swagger_urlpatterns
-               + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
                + static(settings.STATIC_URL, document_root=settings.STATIC_URL))
