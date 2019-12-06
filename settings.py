@@ -29,9 +29,7 @@ SECRET_KEY = "CHANGE_ME!!!! (P.S. the SECRET_KEY environment variable will be us
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
-
-INTERNAL_IPS = os.getenv('INTERNAL_IPS').split(':') if os.getenv('INTERNAL_IPS') else None
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -64,15 +62,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
-
-CORS_ORIGIN_ALLOW_ALL = True
-
-# CORS_ORIGIN_WHITELIST = (
-#     'http://localhost:3000',
-# )
-
-CORS_ALLOW_CREDENTIALS = True
-
 
 ROOT_URLCONF = 'urls.main'
 
@@ -165,22 +154,16 @@ USE_L10N = True
 
 USE_TZ = True
 
-SWAGGER_SETTINGS = {
-    "DEFAULT_INFO": "urls.main.django_vagrant",
-    "SECURITY_DEFINITIONS": {
-        "Bearer": {"type": "apiKey", "name": "Authorization", "in": "header"}
-    },
-}
+# SWAGGER_SETTINGS = {
+#     "DEFAULT_INFO": "urls.main.django_vagrant",
+#     "SECURITY_DEFINITIONS": {
+#         "Bearer": {"type": "apiKey", "name": "Authorization", "in": "header"}
+#     },
+# }
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/static/"
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, '../media')
 django_heroku.settings(locals())
-# Celery
-CELERY_TIMEZONE = 'US/Eastern'
-CELERYD_TASK_TIME_LIMIT = 700
-CELERYBEAT_SCHEDULE = {}
