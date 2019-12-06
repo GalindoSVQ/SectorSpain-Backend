@@ -14,7 +14,7 @@ import os
 from os.path import join, dirname
 from dotenv import load_dotenv
 from datetime import timedelta
-
+import django_heroku
 
 # from celery.schedules import crontab
 
