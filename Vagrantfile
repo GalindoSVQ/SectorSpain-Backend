@@ -10,8 +10,9 @@ Vagrant.configure("2") do |config|
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
 
+
   config.push.define "heroku" do |push|
-    push.app = "backend"
+    push.app = "sectorspainbackend"
     push.dir = "backend/"
     push.remote = "heroku"
   end
