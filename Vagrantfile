@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
 
   config.push.define "heroku" do |push|
-    push.app = "sectorspainbackend"
+    push.app = "backend"
     push.dir = "backend/"
     push.remote = "heroku"
   end
