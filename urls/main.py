@@ -56,7 +56,6 @@ schema_view = get_schema_view(
 #                                        cache_timeout=0), name='schema-redoc'),
 # ]
 
-
 # urlpatterns = ([]
 #                + required_urlpatterns
 #                + swagger_urlpatterns
@@ -74,5 +73,5 @@ urlpatterns = ([
     re_path(r'^swagger(?P<format>\.json|\.yaml)$',
             schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('redoc/', schema_view.with_ui('redoc',
-         cache_timeout=0), name='schema-redoc'),
-]) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT))
+                                       cache_timeout=0), name='schema-redoc'),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT))
