@@ -69,7 +69,10 @@ urlpatterns = ([
     path('auth/', include(('users.rest_urls.auth', 'auth'), namespace='auth')),
     path('users/', include(('users.rest_urls.users', 'users'), namespace='users')),
     path('api/', include(('apps.climb.urls', 'climb'), namespace='climb-api')),
-    path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
-    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-])+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('', schema_view.with_ui('swagger', cache_timeout=0),
+         name='schema-swagger-ui'),
+    re_path(r'^swagger(?P<format>\.json|\.yaml)$',
+            schema_view.without_ui(cache_timeout=0), name='schema-json'),
+    path('redoc/', schema_view.with_ui('redoc',
+         cache_timeout=0), name='schema-redoc'),
+]) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT))
