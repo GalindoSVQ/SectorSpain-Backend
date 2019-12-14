@@ -165,11 +165,10 @@ SWAGGER_SETTINGS = {
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 # WORKING
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_ROOT = os.path.join(BASE_DIR, '../static_root')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/static/"
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-MEDIA_URL = '/media/'
+MEDIA_URL = '/static/'
 
 
 # STATIC_URL = '/static/'
