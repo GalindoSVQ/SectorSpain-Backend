@@ -71,7 +71,7 @@ class SectorAddSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sector
         fields = ['name', 'description', 'latitude',
-                  'longitude', 'orientation', 'picture', 'crag_id']
+                  'longitude', 'orientation', 'picture', 'rope', 'crag_id']
 
 
 class RouteSerializer(serializers.ModelSerializer):
@@ -87,4 +87,4 @@ class RouteAddSerializer(serializers.ModelSerializer):
     class Meta:
         model = Route
         fields = ['name', 'description', 'grade',
-                  'height', 'nanchor', 'sector_id']
+                  'height', 'nanchor', 'sector_id', 'rating']
