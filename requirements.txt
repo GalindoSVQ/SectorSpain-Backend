@@ -13,7 +13,7 @@ django-filter==2.1.0
 django-su==0.8.0
 django-utils==0.0.2
 django-utils2==2.5.4
-djangorestframework==3.9.4
+djangorestframework==3.11.2
 djangorestframework-simplejwt==4.3.0
 django-heroku
 drf-yasg==1.16.0
